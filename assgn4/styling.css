@@ -1,0 +1,74 @@
+@import "https://fonts.googleapis.com/css?family=Geo&display=swap";
+
+@font-face {
+    font-family: 'kashmirregular';
+    src: url('new_font/kashmir-webfont.woff2') format('woff2'),
+         url('new_font/kashmir-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+CoverBands {
+  color: white;
+  background-color : black;
+  width: 100%;
+  font-family: 'Geo', sans-serif;
+}
+CoverBand {
+  color: #e67300;
+  font-size : 60px;
+  background-color : #ffd9b3;
+}
+Name {
+  font-family: kashmirregular;
+  display: flex;
+  box-sizing: border-box;
+  margin-right : 20em;
+  background-color : #ffd9b3;
+  border-style: double;
+  border-radius: 15px;
+  border-width: thick;
+  padding-left: 5px;
+  border-color : #e67300;
+}
+Artists {
+  font-family: kashmirregular;
+  display : block;
+  box-sizing: border-box;
+  background-color : #ffd9b3;
+  margin-right : 15em;
+  margin-left : 10px;
+  border-style: double;
+  border-radius: 15px;
+  border-width: thick;
+  padding-left: 5px;
+  border-color : #e67300;
+}
+Vocals {
+  display : block;
+}
+Guitar {
+  display : block;
+}
+BassKey {
+  display : block;
+}
+Drums {
+  display : block;
+}
+songname {
+  display : block;
+  font-size: 40px;
+}
+Genre, Year {
+  padding-left: 5px;
+  display : inline-flex;
+  font-size: 25px;
+  color: #ffffff;
+  margin-left: 20px;
+}
+Song {
+  padding-left: 5px;
+  font-weight : bold;
+  display: block;
+}

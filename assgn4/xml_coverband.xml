@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CoverBands>
+	<CoverBand type="Zoso">
+		<Artists>
+			<Vocals>Matt Jernigan</Vocals>
+			<Guitar>John McDaniel</Guitar>
+			<BassKey>Adam Sandling</BassKey>
+			<Drums>Bevan Davies</Drums>
+		</Artists>
+		<SetList>
+			<Song1>
+				<Title>Misty Mountain Hop</Title>
+				<Genre>Rock</Genre>
+				<Year>1971</Year>
+			</Song1>
+			<Song2>
+				<Title>The Lemon Song</Title>
+				<Genre>Rock</Genre>
+				<Year>1969</Year>
+			</Song2>
+			<Song3>
+				<Title>Celebration Day</Title>
+				<Genre>Rock</Genre>
+				<Year>1970</Year>
+			</Song3>
+			<Song4>
+				<Title>Nobody's Fault but Mine</Title>
+				<Genre>Rock</Genre>
+				<Year>1976</Year>
+			</Song4>
+			<Song5>
+				<Title>Over the Hills and Far Away</Title>
+				<Genre>Rock</Genre>
+				<Year>1973</Year>
+			</Song5>
+			<Song6>
+				<Title>Thank You</Title>
+				<Genre>Rock</Genre>
+				<Year>1969</Year>
+			</Song6>
+			<Song7>
+				<Title>Since I've Been Loving You</Title>
+				<Genre>Rock</Genre>
+				<Year>1970</Year>
+			</Song7>
+			<Song8>
+				<Title>That's the Way</Title>
+				<Genre>Rock</Genre>
+				<Year>1970</Year>
+			</Song8>
+			<Song9>
+				<Title>Going to California</Title>
+				<Genre>Rock</Genre>
+				<Year>1971</Year>
+			</Song9>
+			<Song10>
+				<Title>This Song Remains the Same</Title>
+				<Genre>Rock</Genre>
+				<Year>1973</Year>
+			</Song10>
+			<Song11>
+				<Title>Tangerine</Title>
+				<Genre>Rock</Genre>
+				<Year>1970</Year>
+			</Song11>
+		</SetList>	
+	</CoverBand>
+</CoverBands>	

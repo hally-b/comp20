@@ -5,7 +5,7 @@
     <script type="text/javascript" src="magicscroll/magicscroll.js"></script>
 
     <!--font imports -->
-    <link href="https://fonts.googleapis.com/css?family=Lacquer&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Barlow&display=swap" rel="stylesheet">
 
     <!--links to external stylesheets -->
     <link type="text/css" rel="stylesheet" href="home.css"/>
@@ -13,21 +13,24 @@
     <title> Home </title>
     <style type = "text/css">
       ul {
-        position: fixed;
+        list-style-type: none;
         font-size: 20px;
         width: 400px;
         height: 30px;
         background-color: #f1f1f1;
-        border: 2px solid #cc9966;
+        border: 2px solid #1f1f2e;
       }
       li {
         display: inline;
-        padding: 20px;
-        font-family: 'Lacquer', sans-serif;
-        text-decoration: none;
       }
-      li:hover {
-        background-color: #555;
+      li a{
+        padding: 20px;
+        font-family: 'Barlow', sans-serif;
+        text-decoration: none;
+        color: #1f1f2e;
+      }
+      li a:hover {
+        background-color: #1f1f2e;
         color: white;
       }
       .active {
@@ -36,6 +39,16 @@
       }
     </style>
   </head>
+
+  <div class="MagicScroll" data-options="step: 0; speed: 8000;">
+    <a href="/page-1/"><img src="images/IMG_4644.jpg"/></a>
+    <a href="/page-2/"><img src="images/IMG_5102.jpg"/></a>
+    <a href="/page-4/"><img src="images/IMG_5106.jpg"/></a>
+    <a href="/page-5/"><img src="images/IMG_5107.jpg"/></a>
+    <a href="/page-6/"><img src="images/IMG_5110.jpg"/></a>
+    <a href="/page-6/"><img src="images/IMG_5111.jpg"/></a>
+    <a href="/page-6/"><img src="images/IMG_5112.jpg"/></a>
+  </div>
 
   <body>
     <h1> Dog Days Adoption Service </h1>
@@ -47,18 +60,11 @@
       <li><a href="contact.asp">Contact</a></li>
     </ul>
 
+    <p>Dog Days Adoption Serives creates a nurturing home for
+    lost animals, while also vigilantly searching for the new homes that
+    these animals deserve. </p>
+
   </body>
 
-
-
-  <div class="MagicScroll" data-options="step: 0; speed: 8000;">
-    <a href="/page-1/"><img src="images/IMG_4644.jpg"/></a>
-    <a href="/page-2/"><img src="images/IMG_5102.jpg"/></a>
-    <a href="/page-4/"><img src="images/IMG_5106.jpg"/></a>
-    <a href="/page-5/"><img src="images/IMG_5107.jpg"/></a>
-    <a href="/page-6/"><img src="images/IMG_5110.jpg"/></a>
-    <a href="/page-6/"><img src="images/IMG_5111.jpg"/></a>
-    <a href="/page-6/"><img src="images/IMG_5112.jpg"/></a>
-  </div>
 
 </html>

@@ -1,5 +1,10 @@
 h1 {
-  font-family: 'Lacquer', sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-size: 40px;
-  color: #cc9966;
+  color: #1f1f2e;
+}
+p {
+  font-family : 'Barlow', sans-serif;
+  font-size : 17px;
+  color : #48486a;
 }

@@ -8,3 +8,136 @@ p {
   font-size : 17px;
   color : #48486a;
 }
+h2 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 25px;
+  color: #a4a4c1;
+}
+
+.idtag {
+  font-family : 'Barlow', sans-serif;
+  font-size: 20px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.idtag:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.leash{
+  font-family : 'Barlow', sans-serif;
+  font-size: 20px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.leash:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.foodagua{
+  font-family : 'Barlow', sans-serif;
+  font-size: 20px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.foodagua:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.kibble{
+  font-family : 'Barlow', sans-serif;
+  font-size: 18px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.kibble:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.toys{
+  font-family : 'Barlow', sans-serif;
+  font-size: 18px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.toys:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.crate{
+  font-family : 'Barlow', sans-serif;
+  font-size: 15px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.crate:hover{
+  background-color: #676798;
+  color: white;
+}
+
+.groom{
+  font-family : 'Barlow', sans-serif;
+  font-size: 15px;
+  height: 100px;
+  width: 100px;
+  text-align: center;
+  margin: 0 auto;
+  border: 2px solid #000000;
+  background-color: #a4a4c1;
+  padding: 20px;
+}
+
+.groom:hover{
+  background-color: #676798;
+  color: white;
+}
+
+img {
+  height: inherit;
+  width: inherit;
+}
+
+.blocks {
+  display: flex;
+}

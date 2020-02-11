@@ -1,0 +1,31 @@
+h1 {
+  font-family: 'Barlow', sans-serif;
+  font-size: 40px;
+  color: #1f1f2e;
+}
+
+.contactform {
+    display: block;
+    font-family: 'Barlow', sans-serif;
+    color: #1f1f2e;
+}
+
+input[type = text] {
+  box-sizing: border-box;
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px;
+  box-sizing: border-box;
+}
+
+input[type=text]:focus {
+  border: 3px solid #ffffff;
+}
+
+textarea {
+  width: 75%;
+}
+
+label {
+  font-size: 30px;
+}

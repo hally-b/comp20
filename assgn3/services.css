@@ -90,3 +90,29 @@ figcaption {
   margin: 0 auto;
   border: 2px solid #000000;
 }
+
+.footer {
+  display: inline-flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  background: #a4a4c1;
+  font-size: 20px;
+  width: 400px;
+  height: 30px;
+}
+
+.maps {
+  margin: 0 auto;
+  font-family: 'Barlow', sans-serif;
+  text-decoration: none;
+}
+
+.caller {
+  margin: 0 auto;
+  font-family: 'Barlow', sans-serif;
+  text-decoration: none;
+}

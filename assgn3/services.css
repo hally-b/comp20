@@ -4,6 +4,11 @@ h1 {
   color: #1f1f2e;
 }
 
+h2 {
+  font-family: 'Barlow', sans-serif;
+  color: #1f1f2e;
+}
+
 p {
   font-family: 'Barlow', sans-serif;
   font-size: 20px;

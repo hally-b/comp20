@@ -3,3 +3,72 @@ h1 {
   font-size: 40px;
   color: #1f1f2e;
 }
+
+img {
+  height: 200px;
+  width: 200px;
+}
+
+.pets1 {
+  display : flex;
+}
+.pets2 {
+  display : flex;
+}
+.pets3 {
+  display : flex;
+}
+
+.dog1 {
+  left: 0%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog2 {
+  left: 25%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog3 {
+  left: 50%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog4 {
+  left: 0%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog5 {
+  left: 25%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog6 {
+  left: 50%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog7 {
+  left: 0%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog8 {
+  left: 25%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}
+
+.dog9 {
+  left: 50%;
+  margin: 0 auto;
+  border: 2px solid #000000;
+}

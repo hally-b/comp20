@@ -10,11 +10,11 @@
       var temp = [];
       var val;
       for(var i = 0; i < 5; i++) {
-        val = Math.floor(Math.random() * 48);
+        val = Math.ceiling(Math.random() * 48);
         nums.push(val);
         temp.push(val);
       }
-      val = Math.floor(Math.random() * 18);
+      val = Math.ceiling(Math.random() * 18);
       nums.push(val);
       temp.push(val);
       nums.join("-");

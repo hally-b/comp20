@@ -4,17 +4,90 @@
   <script language = "javascript">
     function getLottoNums() {
       var nums = [];
-      var num;
-      for(int i = 0; i < 6; i++) {
-        num = Math.floor(Math.random() * 10);
-        alert(num);
-        nums.push(num);
+      var temp = [];
+      var val;
+      for(var i = 0; i < 5; i++) {
+        val = Math.floor(Math.random() * 48);
+        nums.push(val);
+        temp.push(val);
       }
+      val = Math.floor(Math.random() * 18);
+      nums.push(val);
+      temp.push(val);
+      nums.join("-");
+      alert("The Lotto Numbers are: " + nums);
+      nums.sort(function(a, b){return a-b}).join("-");
+      alert("The sorted Lotto Numbers are: " + nums);
+      return (temp);
+    }
+
+    function getIns() {
+      var user = document.getElementById('choosenums').value;
+      var luckyball = document.getElementById('luckyballnum').value;
+      var x = user + " " + luckyball;
+      var comp_nums = x.split(" ");
+      return (comp_nums);
+    }
+
+    function isWinner() {
+      var match = 0;
+      var luckymatch = 0;
+      var real = getLottoNums();
+      alert("real is: " + real);
+      var guess = getIns();
+      alert("guess is: " +guess);
+      for(var i = 0; i < guess.length - 1; i++) {
+        if(real[i] == guess[i])
+        match++;
+      }
+
+      if(real[real.length-1] == guess[guess.length-1])
+        luckymatch++;
+
+      switch (match+luckymatch) {
+        case 51:
+          alert("5 + Lucky Ball! You won $7,000 a WEEK for LIFE!")
+          break;
+        case 50:
+          alert("5! You won $25,000 a YEAR for LIFE!")
+          break;
+        case 41:
+          alert("4 + Lucky Ball! You won $200!")
+          break;
+        case 40:
+          alert("4! You won $5,000!")
+          break;
+        case 31:
+          alert("3 + Lucky Ball! You won $150!")
+          break;
+        case 30:
+          alert("3! You won $20!")
+          break;
+        case 21:
+          alert("2 + Lucky Ball! You won $25!")
+          break;
+        case 20:
+          alert("2! You won $3!")
+          break;
+        case 11:
+          alert("1 + Lucky Ball! You won $6!")
+          break;
+        case 01:
+          alert("Lucky Ball! You won $4!")
+          break;
+        case 00:
+          alert("You Lose! Play Again.")
+        }
     }
   </script>
 </head>
 
 <body>
+  <input type=text id = choosenums placeholder = "~Enter Lotto Picks~">
+  <br>
+  <input type=text id = luckyballnum placeholder = "~Enter Lucky Ball~">
+  <br>
+  <input type=button onClick="isWinner()" value="Did you Win?">
 </body>
 
 

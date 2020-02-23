@@ -8,6 +8,8 @@
     function getLottoNums() {
       var nums = [];
       var temp = [];
+      var msg1;
+      var parag1 = document.getElementById('p1');
       var val;
       for(var i = 0; i < 5; i++) {
         val = Math.floor((Math.random() * 48) + 1);
@@ -19,18 +21,21 @@
       nums.push(val);
       temp.push(val);
       temp.join("-");
-      alert("The Lotto Numbers are: " + temp);
-      alert("The Sorted Lotto Numbers are: " + nums);
+      msg1 = "The Lotto Numbers are: " + temp;
+      parag1.innerHTML = msg1;
       return (nums);
     }
 
     function getIns() {
+      var msg2;
+      var parag2 = document.getElementById('p2');
       var user = document.getElementById('choosenums').value;
       var luckyball = document.getElementById('luckyballnum').value;
       var comp_nums = user.split(" ");
+      msg2 = "Your Lotto Numbers are: " + comp_nums +","+luckyball;
+      parag2.innerHTML = msg2;
       comp_nums.sort(function(a, b){return a-b});
       comp_nums.push(luckyball);
-      alert(comp_nums);
       return (comp_nums);
     }
 
@@ -53,41 +58,43 @@
       if(real[real.length-1] == guess[guess.length-1])
         luckymatch++;
 
-      alert(match+""+luckymatch);
+      var parag3 = document.getElementById('p3');
+      var msg;
       switch (match+""+luckymatch) {
         case "51":
-          alert("5 + Lucky Ball! You won $7,000 a WEEK for LIFE!")
+          msg = "5 + Lucky Ball! You won $7,000 a WEEK for LIFE!";
           break;
         case "50":
-          alert("5! You won $25,000 a YEAR for LIFE!")
+          msg = "5! You won $25,000 a YEAR for LIFE!";
           break;
         case "41":
-          alert("4 + Lucky Ball! You won $200!")
+          msg = "4 + Lucky Ball! You won $200!";
           break;
         case "40":
-          alert("4! You won $5,000!")
+          msg = "4! You won $5,000!";
           break;
         case "31":
-          alert("3 + Lucky Ball! You won $150!")
+          msg = "3 + Lucky Ball! You won $150!";
           break;
         case "30":
-          alert("3! You won $20!")
+          msg = "3! You won $20!";
           break;
         case "21":
-          alert("2 + Lucky Ball! You won $25!")
+          msg = "2 + Lucky Ball! You won $25!";
           break;
         case "20":
-          alert("2! You won $3!")
+          msg = "2! You won $3!"
           break;
         case "11":
-          alert("1 + Lucky Ball! You won $6!")
+          msg = "1 + Lucky Ball! You won $6!";
           break;
         case "01":
-          alert("Lucky Ball! You won $4!")
+          msg = "Lucky Ball! You won $4!";
           break;
-        case "00":
-          alert("You Lose! Play Again.")
+        default:
+          msg = "You Lose! Play Again.";
         }
+        parag3.innerHTML = msg;
     }
   </script>
 </head>
@@ -138,6 +145,9 @@
   <input type=text id = luckyballnum placeholder = "~Enter Lucky Ball~">
   <br><br>
   <input type=button onClick="isWinner()" value="Did you Win?">
+  <p id = "p1"></p>
+  <p id = "p2"></p>
+  <p id = "p3"></p>
 </body>
 
 

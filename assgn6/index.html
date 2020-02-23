@@ -15,75 +15,115 @@
         temp.push(val);
       }
       val = Math.floor((Math.random() * 18) + 1);
+      nums.sort(function(a, b){return a-b});
       nums.push(val);
       temp.push(val);
-      nums.join("-");
-      alert("The Lotto Numbers are: " + nums);
-      nums.sort(function(a, b){return a-b}).join("-");
-      alert("The sorted Lotto Numbers are: " + nums);
-      return (temp);
+      temp.join("-");
+      alert("The Lotto Numbers are: " + temp);
+      alert("The Sorted Lotto Numbers are: " + nums);
+      return (nums);
     }
 
     function getIns() {
       var user = document.getElementById('choosenums').value;
       var luckyball = document.getElementById('luckyballnum').value;
-      var x = user + " " + luckyball;
-      var comp_nums = x.split(" ");
+      var comp_nums = user.split(" ");
+      comp_nums.sort(function(a, b){return a-b});
+      comp_nums.push(luckyball);
+      alert(comp_nums);
       return (comp_nums);
     }
 
     function isWinner() {
       var match = 0;
+      var j = 0;
       var luckymatch = 0;
       var real = getLottoNums();
       var guess = getIns();
-      for(var i = 0; i < guess.length - 1; i++) {
-        if(real[i] == guess[i])
-        match++;
+      while(j < guess.length - 1) {
+        for(var i = 0; i < guess.length - 1; i++) {
+          if(guess[i] == real[j]) {
+            match++;
+            break;
+          }
+        }
+        j++;
       }
 
       if(real[real.length-1] == guess[guess.length-1])
         luckymatch++;
 
-      switch (match+luckymatch) {
-        case 51:
+      alert(match+""+luckymatch);
+      switch (match+""+luckymatch) {
+        case "51":
           alert("5 + Lucky Ball! You won $7,000 a WEEK for LIFE!")
           break;
-        case 50:
+        case "50":
           alert("5! You won $25,000 a YEAR for LIFE!")
           break;
-        case 41:
+        case "41":
           alert("4 + Lucky Ball! You won $200!")
           break;
-        case 40:
+        case "40":
           alert("4! You won $5,000!")
           break;
-        case 31:
+        case "31":
           alert("3 + Lucky Ball! You won $150!")
           break;
-        case 30:
+        case "30":
           alert("3! You won $20!")
           break;
-        case 21:
+        case "21":
           alert("2 + Lucky Ball! You won $25!")
           break;
-        case 20:
+        case "20":
           alert("2! You won $3!")
           break;
-        case 11:
+        case "11":
           alert("1 + Lucky Ball! You won $6!")
           break;
-        case 01:
+        case "01":
           alert("Lucky Ball! You won $4!")
           break;
-        case 00:
+        case "00":
           alert("You Lose! Play Again.")
         }
     }
   </script>
 </head>
 
+<style type = "text/css">
+  .nav {
+    list-style-type: none;
+    font-size: 20px;
+    width: 450px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+  }
+  .li1, .li2 {
+    display: inline;
+  }
+  li a{
+    padding: 20px;
+    font-family: 'Bowlby One SC';
+    text-decoration: none;
+    color: #1f1f2e;
+  }
+  li a:hover {
+    background: #000000;
+    color: white;
+    padding: 0px;
+  }
+</style>
+
 <body>
+
+  <ul class = nav>
+    <li class = li1><a href="index.html">Lottery</a></li>
+    <li class = li2><a href="amicableNums.html">Amicable Numbers</a></li>
+  </ul>
+
   <h1> Massachusetts Lotto for Life </h1>
   <h2> Quick Picks! </h2>
   <p> Rules: <p>

@@ -1,0 +1,23 @@
+input {
+  font-family: 'Bowlby One SC';
+  font-size: 20px;
+  color: #26a7ed;
+}
+
+h1 {
+  font-family: 'Bowlby One SC';
+  font-size: 30px;
+  color: #000000;
+}
+
+h2 {
+  font-family: 'Bowlby One SC';
+  font-size: 25px;
+  color: #0000e6
+}
+
+.paras {
+  font-family: 'Bowlby One SC';
+  font-size: 15px;
+  color: #0000e6
+}

@@ -1,10 +1,93 @@
-<!DOCTYPE html>
+<!doctype html>
   <head>
-    <title>MA Lottery</title>
-    <script language = "javascript"> </script>
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap"
+      rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="amicableNums.css"/>
+    <title>Amicable Numbers</title>
+    <script language = "javascript">
+      function isAmicable() {
+        var n1 = document.getElementById('num1').value;
+        var n2 = document.getElementById('num2').value;
+
+        var parag1 = document.getElementById('p1');
+        var parag2 = document.getElementById('p2');
+        var parag3 = document.getElementById('p3');
+
+        var facs1 = [];
+        var facs2 = [];
+
+        for(var i = 1; i < n1; i++) {
+          if(n1 % i == 0)
+            facs1.push(i);
+        }
+
+        for(var i = 1; i < n2; i++) {
+          if(n2 % i == 0)
+            facs2.push(i);
+        }
+
+        var sum1 = facs1.reduce((a,b) => a + b, 0);
+        var sum2 = facs2.reduce((a,b) => a + b, 0);
+        var msg2 = "Factors of " + n1 + " are " + facs1.join("-") + " and the sum is " + sum1;
+        var msg3 = "Factors of " + n2 + " are " + facs2.join("-") + " and the sum is " + sum2;
+
+        var msg1 = "These two values are not amicable.";
+        if(sum1 == n2 && sum2 == n1)
+          msg1 = "These two values are amicable.";
+
+        parag1.innerHTML = msg1;
+        parag2.innerHTML = msg2;
+        parag3.innerHTML = msg3;
+      }
+  </script>
+</head>
+
+<style type = "text/css">
+  ul {
+    list-style-type: none;
+    font-size: 20px;
+    width: 450px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+  }
+  li {
+    display: inline;
+  }
+  li a{
+    padding: 20px;
+    font-family: 'Bowlby One SC';
+    text-decoration: none;
+    color: #1f1f2e;
+  }
+  li a:hover {
+    background-color: #000000;
+    color: white;
+    padding: 0px;
+  }
+</style>
 
   <body>
-    <h1> some shit </h1>
+
+    <ul>
+      <li><a href="index.html">Lottery</a></li>
+      <li><a href="amicableNums.html">Amicable Numbers</a></li>
+    </ul>
+
+    <h1> Amicable Numbers </h1>
+    <h2> Enter two numbers to test if they are amicable. </h2>
+    <input type=text id = num1 placeholder = "Enter Number #1">
+    <br><br>
+    <input type=text id = num2 placeholder = "Enter Number #2">
+    <br><br>
+    <input type=button onClick="isAmicable()" value="Are they Amicable?">
+    <div class = "paras">
+      <p id = p1></p>
+      <p id = p2></p>
+      <p id = p3></p>
+    </div>
+
   </body>
+
+
 </html>

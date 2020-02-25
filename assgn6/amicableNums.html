@@ -1,17 +1,12 @@
 <!doctype html>
   <head>
-    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="amicableNums.css"/>
     <title>Amicable Numbers</title>
     <script language = "javascript">
       function isAmicable() {
         var n1 = document.getElementById('num1').value;
         var n2 = document.getElementById('num2').value;
-
-        var parag1 = document.getElementById('p1');
-        var parag2 = document.getElementById('p2');
-        var parag3 = document.getElementById('p3');
 
         var facs1 = [];
         var facs2 = [];
@@ -25,7 +20,13 @@
           if(n2 % i == 0)
             facs2.push(i);
         }
+        printMessages(facs1, facs2, n1, n2);
+      }
 
+      function printMessages(facs1, facs2, n1, n2) {
+        var parag1 = document.getElementById('p1');
+        var parag2 = document.getElementById('p2');
+        var parag3 = document.getElementById('p3');
         var sum1 = facs1.reduce((a,b) => a + b, 0);
         var sum2 = facs2.reduce((a,b) => a + b, 0);
         var msg2 = "Factors of " + n1 + " are " + facs1.join("-") + " and the sum is " + sum1;

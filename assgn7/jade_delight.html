@@ -28,15 +28,9 @@ function makeSelect(name, minRange, maxRange)
 	t = "<select name='" + name + "' size='1'>";
 	for (j=minRange; j<=maxRange; j++)
 	   t += "<option>" + j + "</option>";
-	t+= "</select>";
+	t+= "</select>"; 
 	return t;
 }
-
-function updateBox(val) {
-	var c = document.getElementById("quan");
-	c.value = val;
-}
-
 </script>
 
 <h1>Jade Delight</h1>
@@ -47,8 +41,8 @@ function updateBox(val) {
 <p>Street: <input type="text"  name='street' /></p>
 <p>City: <input type="text"  name='city' /></p>
 <p>Phone*: <input type="text"  name='phone' /></p>
-<p>
-	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup
+<p> 
+	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
 	<input type="radio"  name='p_or_d' value = 'delivery'/>
 	Delivery
 </p>
@@ -62,20 +56,18 @@ function updateBox(val) {
 <script language="javascript">
 
   var s = "";
-	var c;
   for (i=0; i< menuItems.length; i++)
   {
 	  s += "<tr><td>";
 	  s += makeSelect("quan" + i, 0, 10);
 	  s += "</td><td>" + menuItems[i].name + "</td>";
 	  s += "<td> $ " + menuItems[i].cost.toFixed(2) + "</td>";
-		c = document.getElementById("quan")
-	  s += "<td>$<input type='text' name='cost'/> </td></tr>";
+	  s += "<td>$<input type='text' name='cost'/></td></tr>";
   }
   document.writeln(s);
 </script>
 </table>
-<p>Subtotal:
+<p>Subtotal: 
    $<input type="text"  name='subtotal' id="subtotal" />
 </p>
 <p>Mass tax 6.25%:

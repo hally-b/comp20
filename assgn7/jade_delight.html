@@ -8,6 +8,8 @@
 <body>
 <script language="javascript">
 
+var totalCost = parseInt(0);
+
 function MenuItem(name, cost)
 {
 	this.name = name;
@@ -22,15 +24,62 @@ menuItems = new Array(
 	new MenuItem("Fried Rice", 2.35)
 );
 
+function updateBox(name) {
+		var str = name;
+		var sel = document.getElementById(name);
+		var tbl = document.getElementById('myTable');
+
+		var index = parseInt(name[4]);
+		var num = menuItems[index].cost.toFixed(2);
+		var selectedOpt = getSelectedOption(sel).value;
+		var totcost = (num * selectedOpt).toFixed(2);
+		var rowInd = index + parseInt(1);
+		tbl.rows[rowInd].cells.item(3).innerHTML = "<td>$<input type='text' name='cost' value="+totcost+" /></td></tr>";
+		totalCost += totcost*1;
+
+		document.getElementById('subtotal').value = totalCost.toFixed(2);
+		document.getElementById('tax').value = (totalCost*0.0625).toFixed(2);
+		var all = 1*totalCost.toFixed(2) + 1*(totalCost*0.0625).toFixed(2);
+		document.getElementById('total').value = all;
+}
+
+function validateForm() {
+
+	if((document.getElementsByName('lname')[0].value == "") && (document.getElementsByName('phone')[0].value == ""))
+				printMessage("Please enter last name and phone number.");
+	else if (document.getElementsByName('lname')[0].value == "")
+				printMessage("Please enter last name and phone number.");
+	else if (document.getElementsByName('phone')[0].value == "")
+				printMessage("Please enter last name and phone number.");
+}
+
+function printMessage(msg) {
+		var fnlm = document.getElementById("finMsg");
+		fnlm.innerHTML = msg;
+}
+
+function getSelectedOption(sel) {
+        var o;
+				var l = sel.options.length;
+        for (var i=0; i < l; i++) {
+            o = sel.options[i];
+            if (o.selected) {
+                break;
+            }
+        }
+        return o;
+  }
+
 function makeSelect(name, minRange, maxRange)
 {
 	var t= "";
-	t = "<select name='" + name + "' size='1'>";
+	t = "<select name='"+name+"' id = '"+name+"' size='1' onchange = 'updateBox(name)'>";
 	for (j=minRange; j<=maxRange; j++)
 	   t += "<option>" + j + "</option>";
-	t+= "</select>"; 
+	t+= "</select>";
 	return t;
 }
+
 </script>
 
 <h1>Jade Delight</h1>
@@ -41,12 +90,11 @@ function makeSelect(name, minRange, maxRange)
 <p>Street: <input type="text"  name='street' /></p>
 <p>City: <input type="text"  name='city' /></p>
 <p>Phone*: <input type="text"  name='phone' /></p>
-<p> 
-	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
-	<input type="radio"  name='p_or_d' value = 'delivery'/>
-	Delivery
+<p>
+	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup
+	<input type="radio"  name='p_or_d' value = 'delivery'/>Delivery
 </p>
-<table border="0" cellpadding="3">
+<table border="0" cellpadding="3" id = 'myTable'>
   <tr>
     <th>Select Item</th>
     <th>Item Name</th>
@@ -54,7 +102,6 @@ function makeSelect(name, minRange, maxRange)
     <th>Total Cost</th>
   </tr>
 <script language="javascript">
-
   var s = "";
   for (i=0; i< menuItems.length; i++)
   {
@@ -67,8 +114,8 @@ function makeSelect(name, minRange, maxRange)
   document.writeln(s);
 </script>
 </table>
-<p>Subtotal: 
-   $<input type="text"  name='subtotal' id="subtotal" />
+<p>Subtotal:
+   $<input type="text"  name='subtotal' id="subtotal"/>
 </p>
 <p>Mass tax 6.25%:
   $ <input type="text"  name='tax' id="tax" />
@@ -76,7 +123,8 @@ function makeSelect(name, minRange, maxRange)
 <p>Total: $ <input type="text"  name='total' id="total" />
 </p>
 
-<input type = "submit" value = "Submit Order" />
+<input type = "submit" value = "Submit Order" onclick = "validateForm()" />
+<p id = "finMsg"> </p>
 
 </form>
 </body>

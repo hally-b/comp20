@@ -45,17 +45,49 @@ function updateBox(name) {
 
 function validateForm() {
 
-	if((document.getElementsByName('lname')[0].value == "") && (document.getElementsByName('phone')[0].value == ""))
-				printMessage("Please enter last name and phone number.");
-	else if (document.getElementsByName('lname')[0].value == "")
-				printMessage("Please enter last name and phone number.");
-	else if (document.getElementsByName('phone')[0].value == "")
-				printMessage("Please enter last name and phone number.");
+	var l = document.forms["myform"]["lname"].value;
+	var n = document.forms["myform"]["phone"].value;
+
+	if((l == "") && (n == "")) {
+				alert("Please enter last name and phone number.");
+				return false;
+	} else if (n == "") {
+				alert("Please enter phone number.");
+				return false;
+	} else if (l == "") {
+				alert("Please enter last name.");
+				return false;
+	} else if (validateNum(n) == false){
+				alert("Please enter a valid phone number.");
+				return false;
+	} else {
+				return true;
+	}
 }
 
-function printMessage(msg) {
-		var fnlm = document.getElementById("finMsg");
-		fnlm.innerHTML = msg;
+function checkInt(val) {
+	if(val === parseInt(val, 10))
+		return true;
+	else {
+		return false;
+	}
+}
+
+function validateNum(num) {
+
+		if(num.length != 12) {
+			return false;
+		} else if(num[3] != "-" || num[7] != "-") {
+				return false;
+		} else if (!checkInt(num[0]+num[1]+num[2])) {
+				return false;
+		} else if(!checkInt(num[4]+num[5]+num[6])) {
+				return false;
+		} else if (!checkInt(num[8]+num[9]+num[10]+num[11])) {
+				return false;
+		} else {
+			return true;
+		}
 }
 
 function getSelectedOption(sel) {
@@ -83,13 +115,13 @@ function makeSelect(name, minRange, maxRange)
 </script>
 
 <h1>Jade Delight</h1>
-<form>
+<form name = "myform" onsubmit = "return validateForm()">
 
 <p>First Name: <input type="text"  name='fname' /></p>
 <p>Last Name*:  <input type="text"  name='lname' /></p>
 <p>Street: <input type="text"  name='street' /></p>
 <p>City: <input type="text"  name='city' /></p>
-<p>Phone*: <input type="text"  name='phone' /></p>
+<p>Phone*: <input type="text"  name='phone' placeholder = 'XXX-XXX-XXXX'/></p>
 <p>
 	<input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup
 	<input type="radio"  name='p_or_d' value = 'delivery'/>Delivery
@@ -123,8 +155,8 @@ function makeSelect(name, minRange, maxRange)
 <p>Total: $ <input type="text"  name='total' id="total" />
 </p>
 
-<input type = "submit" value = "Submit Order" onclick = "validateForm()" />
-<p id = "finMsg"> </p>
+<input type = "submit" value = "Submit Order"/>
+<p id = "finMsg"></p>
 
 </form>
 </body>

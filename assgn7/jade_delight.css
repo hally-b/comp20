@@ -1,0 +1,25 @@
+h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 40px;
+  color: #ff0000;
+}
+
+p {
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+  color: #ff0000;
+}
+
+table {
+  font-family: 'Fredoka One', cursive;
+  font-size: 20px;
+  color: #060463;
+  border: dotted 2px #fcb6f8;
+}
+
+input {
+  font-family: 'Fredoka One', cursive;
+  font-size: 13px;
+  color: #060463;
+  border: dotted 2px #060463;
+}

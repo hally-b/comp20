@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="https://fonts.googleapis.com/css?family=Fredoka+One&display=swap" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="jade_delight.css"/>
 <title>Jade Delight</title>
 </head>
 
@@ -9,6 +11,7 @@
 <script language="javascript">
 
 var totalCost = parseInt(0);
+var deliverTime = parseInt(0);
 
 function MenuItem(name, cost)
 {
@@ -40,6 +43,7 @@ function updateBox(name) {
 		document.getElementById('subtotal').value = totalCost.toFixed(2);
 		document.getElementById('tax').value = (totalCost*0.0625).toFixed(2);
 		var all = 1*totalCost.toFixed(2) + 1*(totalCost*0.0625).toFixed(2);
+		totalCost = all;
 		document.getElementById('total').value = all;
 }
 
@@ -47,6 +51,8 @@ function validateForm() {
 
 	var l = document.forms["myform"]["lname"].value;
 	var n = document.forms["myform"]["phone"].value;
+	var st = document.forms["myform"]["street"].value;
+	var c = document.forms["myform"]["city"].value;
 
 	if((l == "") && (n == "")) {
 				alert("Please enter last name and phone number.");
@@ -57,10 +63,16 @@ function validateForm() {
 	} else if (l == "") {
 				alert("Please enter last name.");
 				return false;
-	} else if (validateNum(n) == false){
+	} else if (validateNum(n) == false) {
 				alert("Please enter a valid phone number.");
 				return false;
+	} else if (getPorD() == "delivery" && (st == "" || c == "")) {
+				alert("Please enter a street AND city for delivery.");
+				return false;
 	} else {
+				alert("Thanks for your order!");
+				alert(deliverTime);
+				alert("Your total will be $" + totalCost);
 				return true;
 	}
 }
@@ -77,16 +89,16 @@ function validateNum(num) {
 
 		if(num.length != 12) {
 			return false;
-		} else if(num[3] != "-" || num[7] != "-") {
+		} else if(num[3] !== "-" || num[7] !== "-") {
 				return false;
-		} else if (!checkInt(num[0]+num[1]+num[2])) {
+		} else if (!checkInt(parseInt(num[0]+num[1]+num[2]))) {
 				return false;
-		} else if(!checkInt(num[4]+num[5]+num[6])) {
+		} else if(!checkInt(parseInt(num[4]+num[5]+num[6]))) {
 				return false;
-		} else if (!checkInt(num[8]+num[9]+num[10]+num[11])) {
+		} else if (!checkInt(parseInt(num[8]+num[9]+num[10]+num[11]))) {
 				return false;
 		} else {
-			return true;
+				return true;
 		}
 }
 
@@ -110,6 +122,18 @@ function makeSelect(name, minRange, maxRange)
 	   t += "<option>" + j + "</option>";
 	t+= "</select>";
 	return t;
+}
+
+function getPorD() {
+	var fm = document.forms["myform"]["p_or_d"];
+	var tm = new Date();
+	if(fm[0].checked) {
+		deliverTime = "Pickup your food on " + new Date(tm.getTime() + 15*60*1000);
+		return "pickup";
+	} else {
+		deliverTime = "Your food will be delivered on " + new Date(tm.getTime() + 30*60*1000)
+		return "delivery";
+	}
 }
 
 </script>
@@ -156,7 +180,6 @@ function makeSelect(name, minRange, maxRange)
 </p>
 
 <input type = "submit" value = "Submit Order"/>
-<p id = "finMsg"></p>
 
 </form>
 </body>

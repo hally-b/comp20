@@ -44,7 +44,7 @@ function updateBox(name) {
 		document.getElementById('tax').value = (totalCost*0.0625).toFixed(2);
 		var all = 1*totalCost.toFixed(2) + 1*(totalCost*0.0625).toFixed(2);
 		totalCost = all;
-		document.getElementById('total').value = all;
+		document.getElementById('total').value = all.toFixed(2);
 }
 
 function validateForm() {
@@ -72,12 +72,13 @@ function validateForm() {
 	} else {
 				alert("Thanks for your order!");
 				alert(deliverTime);
-				alert("Your total will be $" + totalCost);
+				alert("Your total will be $" + totalCost.toFixed(2));
 				return true;
 	}
 }
 
 function checkInt(val) {
+	alert(val === parseInt(val, 10));
 	if(val === parseInt(val, 10))
 		return true;
 	else {

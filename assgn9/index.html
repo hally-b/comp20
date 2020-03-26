@@ -73,12 +73,13 @@
   <h1> Coverband Information Page </h1>
   <h3> Choose an option from the dropdown menu to sort songs by genre. </h3>
   <label for="genreChoices">Choose a Genre</label>
-  <select id="genreChoices" name="genreChoices" onchange="formSort()">
+  <select id="genreChoices" name="genreChoices">
     <option value="none">--Select Choice--</option>
     <option value="hard rock">Hard Rock</option>
     <option value="psychadelic rock">Psychadelic Rock</option>
     <option value="reggae, ska">Reggae, Ska</option>
   </select>
+  <button onclick = "formSort()">Filter</button>
   <br> <br>
   <div id = "Band"></div>
 

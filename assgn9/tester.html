@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<head>
+  <title> Cover Bands </title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    var value;
+    fetch('data.json')
+      .then(function(get) {
+        return get.json();
+      })
+      .then(function(data) {
+        //value = data;
+        return parseJSON(data);
+      })
+      .catch(function (err) {
+        alert("there was an error fetching json data");
+      });
+
+    function parseJSON(data) {
+      var b = document.getElementById('Band');
+      var div = document.createElement('div');
+      var newElem = "";
+      for(var j = 0; j < data.bands.length; j++) {
+          for(var i = 0; i < data.bands[j].setlist.length; i++) {
+            newElem += '<b>' + data.bands[j].setlist[i].title+ '</b>' + '<br>' +
+                  "Artist: " + data.bands[j].name + '<br>' +
+                  "Genre: " + data.bands[j].genre + '<br>' +
+                  "Released " + data.bands[j].setlist[i].year + '<br>' + '<br>';
+          }
+      }
+      div.innerHTML = newElem;
+      b.appendChild(div);
+  }
+
+  function getSelectedOption(c) {
+          var o;
+  				var l = c.options.length;
+          for (var i=0; i < l; i++) {
+              o = c.options[i];
+              if (o.selected) {
+                  break;
+              }
+          }
+          return o;
+    }
+
+  function formSort(data) {
+    var c = document.getElementById('genreChoices');
+    var opt = getSelectedOption(c).value;
+    var newElem = "";
+    alert(opt);
+    for(var j = 0; j < data.bands.length; j++) {
+        for(var i = 0; i < data.bands[j].setlist.length; i++) {
+          if(data.bands[j].genre ==  data.bands[j].genre)
+          newElem += '<b>' + data.bands[j].setlist[i].title+ '</b>' + '<br>' +
+                     "Artist: " + data.bands[j].name + '<br>' +
+                     "Genre: " + data.bands[j].genre + '<br>' +
+                     "Released " + data.bands[j].setlist[i].year + '<br>' + '<br>';
+        }
+    }
+    div.innerHTML = newElem;
+    b.appendChild(div);
+  }
+  </script>
+
+  <h1> Coverband Information Page </h1>
+  <h3> Choose an option from the dropdown menu to sort songs by genre. </h3>
+  <label for="genreChoices">Choose a Genre</label>
+  <select id="genreChoices" name="genreChoices" onchange="formSort(data)">
+    <option value="none">--Select Choice--</option>
+    <option value="hard rock">Hard Rock</option>
+    <option value="psychadelic rock">Psychadelic Rock</option>
+    <option value="reggae, ska">Reggae, Ska</option>
+  </select>
+  <br> <br>
+  <div id = "Band"></div>
+
+
+
+</body>
+</html>

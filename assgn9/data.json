@@ -1,0 +1,66 @@
+{
+	"bands": [{
+		"name": "Zoso",
+		"artists": ["Matt Jernigan", "John McDaniel", "Adam Sandling", "Bevan Davies"],
+		"genre": "hard rock",
+		"setlist": [{
+			"id": 1,
+			"year": 1971,
+			"title": "Misty Mountain Hop"
+		}, {
+			"id": 2,
+			"year": 1969,
+			"title": "The Lemon Song"
+		}, {
+			"id": 3,
+			"year": 1970,
+			"title": "Celebration Day"
+		}, {
+			"id": 4,
+			"year": 1973,
+			"title": "This Song Remains the Same"
+		}]
+	}, {
+		"name": "Dark Star Orchestra",
+		"artists": ["Jeff Mattson", "Rob Eaton", "Rob Barraco", "Lisa Mackey", "Rob Koritz", "Dino English", "Kevin Rosen"],
+		"genre": "psychadelic rock",
+		"setlist": [{
+			"id": 1,
+			"year": 1970,
+			"title": "Uncle John's Band"
+		}, {
+			"id": 2,
+			"year": 1975,
+			"title": "Help on the Way"
+		}, {
+			"id": 3,
+			"year": 1971,
+			"title": "Bertha"
+		}, {
+			"id": 4,
+			"year": 1975,
+			"title": "Slipknot!"
+		}]
+	}, {
+		"name": "Easy Star All-Stars",
+		"artists": ["Michael Goldwasser", "Victor Axelrod", "Patrick Dougher", "Victor Rice", "Matt Goodwin"],
+		"genre": "reggae, ska",
+		"setlist": [{
+			"id": 1,
+			"year": 1997,
+			"title": "Paranoid Android"
+		}, {
+			"id": 2,
+			"year": 1982,
+			"title": "Thriller"
+		}, {
+			"id": 3,
+			"year": 1973,
+			"title": "Brain Damage"
+		}, {
+			"id": 4,
+			"year": 1967,
+			"title": "Lovely Rita"
+		}]
+	}]
+}

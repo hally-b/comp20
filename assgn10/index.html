@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<head>
+  <title>API Fun</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    function getMeal() {
+      //var f = document.getElementById('fact');
+      //var div = document.createElement('div');
+      var elem = "";
+      var get_api = new XMLHttpRequest();
+      if (!get_api) {
+        alert("Unable to create HTTPRequest object");
+        return;
+      }
+      var data = "id:101";
+      get_api.open('GET', 'https://www.themealdb.com/api/json/v1/1/random.php');
+      get_api.onload = function() {
+
+        var data = JSON.parse(this.response)
+        alert(data.meals[0].strMeal);
+        elem += "<b>Meal: </b>" +'<i>'+data.meals[0].strMeal+'</i>, '+data.meals[0].strArea+'<br><br>';
+        elem += "<b>Recipe Type: </b>" + data.meals[0].strTags + "<br><br>";
+        elem += "<b>Instructions: </b>" + data.meals[0].strInstructions + '<br><br>';
+        elem += "<b>Ingredients: </b><br>";
+        //there are always 20 or less ingredients given, hence the constant
+        for(var i = 1; i <= 20; i++) {
+          var ing = 'strIngredient'+i;
+          var amt = 'strMeasure'+i;
+          if(data.meals[0][amt] == "" && data.meals[0][ing] == "") {
+            elem += '<br><br>';
+            break;
+          }
+          elem += data.meals[0][amt] +", "+data.meals[0][ing] + '<br>';
+        }
+        elem += "<b>Completed Meal:</b><br>"
+        elem += "<img src="+data.meals[0].strMealThumb+" alt='Food Image' width='300' height='300'>"
+             +'<br><br>';
+        document.write(elem);
+        }
+      get_api.send(data);
+    }
+
+    getMeal();
+  </script>
+</body>
+</html>

@@ -19,7 +19,6 @@
       get_api.onload = function() {
 
         var data = JSON.parse(this.response)
-        alert(data.meals[0].strMeal);
         elem += "<b>Meal: </b>" +'<i>'+data.meals[0].strMeal+'</i>, '+data.meals[0].strArea+'<br><br>';
         elem += "<b>Recipe Type: </b>" + data.meals[0].strTags + "<br><br>";
         elem += "<b>Instructions: </b>" + data.meals[0].strInstructions + '<br><br>';

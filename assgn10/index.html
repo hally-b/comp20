@@ -4,10 +4,9 @@
 </head>
 
 <body>
+  <div id = 'meal'></div>
   <script type="text/javascript">
     function getMeal() {
-      //var f = document.getElementById('fact');
-      //var div = document.createElement('div');
       var elem = "";
       var get_api = new XMLHttpRequest();
       if (!get_api) {
@@ -36,12 +35,30 @@
         elem += "<b>Completed Meal:</b><br>"
         elem += "<img src="+data.meals[0].strMealThumb+" alt='Food Image' width='300' height='300'>"
              +'<br><br>';
-        document.write(elem);
+        document.getElementById('meal').innerHTML = elem;
         }
       get_api.send(data);
     }
-
     getMeal();
   </script>
+
+  <h3><b>API Description and Link</b></h3>
+  <p>The link to the API can be found <a href="https://www.themealdb.com/api.php">here</a>.</p>
+  <p>This API allows you to do multiple different things with meals and recipes.
+    The one I chose allows you to get a random recipe and display the important
+    information about the recipe such as the name, origin, type, ingredients,
+    procedure, and even an image of the meal after it is cooked/baked. </p>
+  <p>The option I used for this API was GET. </p>
+  <p><i>Two applications for this API:</i></p>
+  <ol>
+    <li>You could use this API if you were preparing for a cooking competition
+      and you wanted to learn how to make a wide variety of dishes. You could
+      randomly generate a meal and learn how to make it.</li>
+    <li>You could use this API if you wanted to learn about foods eaten
+      in certain countries. There is an API that allows you to display recipes
+      by country, so you could have it display the recipe and learn more about
+      the flavors and methods used for cooking in certain countries which would
+      allow you to learn more about culture. </li>
+  </ol>
 </body>
 </html>
